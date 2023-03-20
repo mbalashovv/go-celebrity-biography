@@ -23,7 +23,8 @@ go build main.go
 ```
 
 Также пользователь может запускать и без сборки программы посредством команды `go run main.go`
-Для пользователей Windows доступен готовый исполняемый файл, который можно [скачать](https://github.com/DillerDurak/go-celebrity-biography/raw/master/parser.exe)
+
+Для пользователей Windows доступен готовый исполняемый файл, который можно скачать [здесь](https://github.com/DillerDurak/go-celebrity-biography/raw/master/parser.exe)
 
 ### Возможные ошибки
 - **Некорректный ввод персоны.** Убедитесь, что вы не допустили ошибку при вводе
