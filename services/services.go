@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"strings"
+
+	"github.com/fatih/color"
 )
 
 func GetTitle(url string) {
@@ -198,16 +200,16 @@ func GetInfo(name string) {
 }
 
 func wrapper(data ...interface{}) {
-	var color uint8
+	var c *color.Color
 	if data[len(data)-1] == "boy" {
 		//stands for blue
-		color = 94
+		c = color.New(color.FgHiBlue)
 	} else {
 		//stands for pink
-		color = 95
+		c = color.New(color.FgHiMagenta)
 	}
 	//returns colored "#" symbol which depends on sex
-	coloredSharp := fmt.Sprintf("\x1b[%dm%s\x1b[0m", color, "#")
+	coloredSharp := c.Sprint("#")
 	fmt.Println()
 	fmt.Println(strings.Repeat(coloredSharp, 60))
 	fmt.Printf("%s\n", coloredSharp)

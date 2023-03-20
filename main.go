@@ -5,19 +5,32 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"parser/services/services"
 	"time"
+
+	"parser/services"
 )
 
 func main() {
-	in := bufio.NewReader(os.Stdin)
-	fmt.Print("Кого ищите?: ")
-	name, err := in.ReadString('\n')
-	if err != nil {
-		log.Fatal(err)
-	}
+	var running = true
 	t := time.Now()
-	services.GetInfo(name)
+	for running {
+		in := bufio.NewReader(os.Stdin)
+		fmt.Print("Поиск: ")
+		name, err := in.ReadString('\n')
+		if err != nil {
+			log.Fatal(err)
+		}
+		services.GetInfo(name)
 
+		var input string
+		fmt.Print("Продолжить работу?(д/н): ")
+		fmt.Scan(&input)
+		if input == "д" {
+			continue
+		} else {
+			running = false
+		}
+	}
 	fmt.Printf("Время работы: %s\n", time.Since(t))
+
 }
