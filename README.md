@@ -11,7 +11,7 @@
 ### Команды
 1.  Клонируем репозиторий
 ```
-git clone https://github.com/DillerDurak/go-celebrity-biography
+git clone https://github.com/mbalashovv/go-celebrity-biography
 ```
 2.  Переходим в склонированную папку
 ```
